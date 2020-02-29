@@ -4,6 +4,7 @@ blog_theme: light # Or use dark
 name: Dasan LAB Blog
 paginate: 25
 url: https://dasanlab.github.io
+baseurl: /physics-blog
 
 
 # Optional settings
