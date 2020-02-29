@@ -5,6 +5,8 @@ name: Dasan LAB Blog
 paginate: 25
 url: https://dasanlab.github.io
 baseurl: /physics-blog
+markdown: kramdown
+mathjax: true
 
 
 # Optional settings
