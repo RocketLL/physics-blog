@@ -1,40 +1,196 @@
----
-layout: default
-title: "Tags"
-description: "Tag cloud from all the posts"
-permalink: /tags
-sitemap: false
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dasan LAB Blog | Tags</title>
+  <meta name="description" content="Tag cloud from all the posts">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="tags-page">
+  <meta property="og:title" content="Tags">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dasanlab.github.io/physics-blog/tags">
+  <meta property="og:description" content="Tag cloud from all the posts">
+  <meta property="og:site_name" content="Dasan LAB Blog">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://dasanlab.github.io/physics-blog/tags">
+  <meta name="twitter:title" content="Tags">
+  <meta name="twitter:description" content="Tag cloud from all the posts">
+
+  
+    <meta property="og:image" content="https://dasanlab.github.io/physics-blog/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://dasanlab.github.io/physics-blog/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://dasanlab.github.io/physics-blog/feed.xml" type="application/rss+xml" rel="alternate" title="Dasan LAB Blog Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/physics-blog/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/physics-blog/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/physics-blog/assets/light-6060548a28e65a53df110e7531f10081259e8863a402354456ed912be32a90e8.css">
+    
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: [
+        "tex2jax.js",
+        "MathMenu.js",
+        "MathZoom.js",
+        "AssistiveMML.js",
+        "a11y/accessibility-menu.js"
+      ],
+      jax: ["input/TeX", "output/CommonHTML"],
+      TeX: {
+        extensions: [
+          "AMSmath.js",
+          "AMSsymbols.js",
+          "noErrors.js",
+          "noUndefined.js",
+        ]
+      },
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+      var TEX = MathJax.InputJax.TeX;
+      var COLS = function (W) {
+        var WW = [];
+        for (var i = 0, m = W.length; i < m; i++)
+          {WW[i] = TEX.Parse.prototype.Em(W[i])}
+        return WW.join(" ");
+      };
+    });
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/physics-blog/" class="header-logo" title="Dasan LAB Blog">Dasan LAB Blog</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/physics-blog/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/physics-blog/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/physics-blog/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/physics-blog/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/physics-blog/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/physics-blog/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <div class="tags-page">
   <h1 class="tags-page-header">
     Tags
   </h1>
 
-  {% assign my_tags = site.collections | where: "label", "my_tags" | first %}
+  
 
-  {% assign sorted_tags = site.tags | sort %}
+  
 
-  {% for tag in sorted_tags %}
+  
 
-    {% assign tag_slug = tag | first %}
-    {% assign upcase_tag_slug = tag_slug | upcase %}
-    {% assign no_of_posts = tag | last | size %}
+    
+    
+    
 
-      {% for my_tag in my_tags.docs %}
-        {% if tag_slug == my_tag.slug %}
-          {% assign tag_name = my_tag.name %}
-        {% endif %}
-      {% endfor %}
-      {% assign upcase_tag_name = tag_name | upcase %}
+      
+      
 
-    {% if upcase_tag_slug != "PROJECT" %}
+    
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="tag-cloud" href="{{ 'tag/' | relative_url }}{{ tag_slug }}" title="See all posts by {{ upcase_tag_name }} tag"
-      style="font-size: {{ no_of_posts  |  times: 15 | plus: 120  }}%">
-        <span>{{ upcase_tag_name }}<small>({{ no_of_posts }})</small></span>
+      <a class="tag-cloud" href="/physics-blog/tag/test" title="See all posts by  tag"
+      style="font-size: 135%">
+        <span><small>(1)</small></span>
       </a>
-    {% endif %}
+    
 
-  {% endfor %}
+  
 </div>
+
+        <footer class="footer scrollappear">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/physics-blog/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159358618-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-159358618-1');
+  </script>
+
+
+<script src="/physics-blog/assets/vendor-2c224c53eb697c739f9490c38819a72184f09472739fd9e492272ef174090428.js" type="text/javascript"></script>
+
+
+  <script src="/physics-blog/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/physics-blog/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/physics-blog/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>
