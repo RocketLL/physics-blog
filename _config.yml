@@ -3,7 +3,7 @@
 blog_theme: light # Or use dark
 name: Dasan LAB Blog
 paginate: 25
-url: https://dasanlab.github.io
+url: https://rocketll.github.io
 baseurl: /physics-blog
 markdown: kramdown
 mathjax: true
